@@ -1,3 +1,5 @@
+# updating this file with a comment
+
 const core = require('@actions/core');
 
 const setup = require('./lib/setup-terraform');
