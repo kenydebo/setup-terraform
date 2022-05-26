@@ -1,5 +1,5 @@
 # setup-terraform
-
+# updates
 <p align="left">
   <a href="https://github.com/hashicorp/setup-terraform/actions"><img alt="Continuous Integration" src="https://github.com/hashicorp/setup-terraform/workflows/Continuous%20Integration/badge.svg" /></a>
   <a href="https://github.com/hashicorp/setup-terraform/actions"><img alt="Setup Terraform" src="https://github.com/hashicorp/setup-terraform/workflows/Setup%20Terraform/badge.svg" /></a>
@@ -125,17 +125,17 @@ steps:
       </details>
 
       #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
-      
+
       <details><summary>Show Plan</summary>
-      
+
       \`\`\`\n
       ${process.env.PLAN}
       \`\`\`
-      
+
       </details>
-      
+
       *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Working Directory: \`${{ env.tf_actions_working_dir }}\`, Workflow: \`${{ github.workflow }}\`*`;
-        
+
       github.rest.issues.createComment({
         issue_number: context.issue.number,
         owner: context.repo.owner,
@@ -202,17 +202,17 @@ steps:
       </details>
 
       #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
-      
+
       <details><summary>Show Plan</summary>
-      
+
       \`\`\`\n
       ${process.env.PLAN}
       \`\`\`
-      
+
       </details>
-      
+
       *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Working Directory: \`${{ env.tf_actions_working_dir }}\`, Workflow: \`${{ github.workflow }}\`*`;
-      
+
       // 3. If we have a comment, update it, otherwise create a new one
       if (botComment) {
         github.rest.issues.updateComment({
@@ -235,7 +235,7 @@ steps:
 
 The action supports the following inputs:
 
-- `cli_config_credentials_hostname` - (optional) The hostname of a Terraform Cloud/Enterprise instance to 
+- `cli_config_credentials_hostname` - (optional) The hostname of a Terraform Cloud/Enterprise instance to
    place within the credentials block of the Terraform CLI configuration file. Defaults to `app.terraform.io`.
 
 - `cli_config_credentials_token` - (optional) The API token for a Terraform Cloud/Enterprise instance to
@@ -247,7 +247,7 @@ The action supports the following inputs:
    the latest available `1.1` version). Prerelease versions can be specified and a range will stay within the
    given tag such as `beta` or `rc`. If no version is given, it will default to `latest`.
 
-- `terraform_wrapper` - (optional) Whether to install a wrapper to wrap subsequent calls of 
+- `terraform_wrapper` - (optional) Whether to install a wrapper to wrap subsequent calls of
    the `terraform` binary and expose its STDOUT, STDERR, and exit code as outputs
    named `stdout`, `stderr`, and `exitcode` respectively. Defaults to `true`.
 
